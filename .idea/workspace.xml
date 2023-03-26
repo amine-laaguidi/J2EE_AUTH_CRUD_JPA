@@ -9,26 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dc05dba-dacd-4cf6-96b6-bb4ce0d7113c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/SingletonConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/StudentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/StudentDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/model/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/StudentsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/TestDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/students.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="3dc05dba-dacd-4cf6-96b6-bb4ce0d7113c" name="Changes" comment="List of students&#10;Saving form" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -312,11 +293,23 @@
       <option name="presentableId" value="Default" />
       <updated>1679252962300</updated>
       <workItem from="1679252964029" duration="3879000" />
-      <workItem from="1679311399293" duration="32753000" />
+      <workItem from="1679311399293" duration="33075000" />
     </task>
+    <task id="LOCAL-00001" summary="List of students&#10;Saving form">
+      <created>1679371390583</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679371390583</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="List of students&#10;Saving form" />
+    <option name="LAST_COMMIT_MESSAGE" value="List of students&#10;Saving form" />
   </component>
 </project>
