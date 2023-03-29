@@ -65,17 +65,47 @@ public class StudentDaoImpl implements StudentDao {
         }
     }
     @Override
-    public Student getStudentById() {
-        return null;
+    public Student getStudentById(Long id) {
+        Connection connection = SingletonConnection.getConnection();
+        Student student = null;
+        try {
+            PreparedStatement ps = connection.prepareStatement
+                    ("SELECT * FROM STUDENTS WHERE ID = ?");
+            ps.setString(1,   id.toString());
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            student = new Student(rs.getLong("ID"), rs.getString("USERNAME"), rs.getInt("AGE"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return student;
     }
 
     @Override
-    public Student update(Student student) {
-        return null;
+    public void update(Student student) {
+        Connection connection = SingletonConnection.getConnection();
+        try{
+            PreparedStatement ps = connection.prepareStatement
+                    ("UPDATE STUDENTS SET USERNAME="+'"'+student.getUsername()+'"'+" , AGE="+student.getAge()+" WHERE ID="+student.getId());
+            System.out.println("UPDATE STUDENTS SET USERNAME="+'"'+student.getUsername()+'"'+" , AGE="+student.getAge()+" WHERE ID="+student.getId()+"");
+            ps.executeUpdate();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     @Override
-    public Student delete(Student student) {
-        return null;
+    public void delete(Long id) {
+        Student student = getStudentById(id);
+        Connection connection = SingletonConnection.getConnection();
+        try{
+            PreparedStatement ps = connection.prepareStatement
+                    ("DELETE FROM STUDENTS WHERE ID = ?");
+            System.out.println("DELETE FROM STUDENTS WHERE ID = 1");
+            ps.setString(1,id.toString());
+            ps.executeUpdate();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

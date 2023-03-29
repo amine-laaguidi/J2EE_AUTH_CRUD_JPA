@@ -20,20 +20,42 @@ public class StudentsController extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Student> students = studentDao.studentsByUsername("");
+        if(request.getParameter("del")!=null){
+            Long id = Long.parseLong(request.getParameter("del"));
+            studentDao.delete(id);
+        }else if(request.getParameter("update")!=null && request.getAttribute("student")==null){
+                Long id = Long.parseLong(request.getParameter("update"));
+                request.setAttribute("student",studentDao.getStudentById(id));
+        }
+        List<Student> students;
+        if(request.getParameter("search")!=null)
+            students= studentDao.studentsByUsername(request.getParameter("search"));
+        else
+            students = studentDao.studentsByUsername("");
         request.setAttribute("students",students);
         request.getRequestDispatcher("views/students.jsp").forward(request,response);
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String username = request.getParameter("username").trim();
         int age = Integer.parseInt(request.getParameter("age"));
         Student student= new Student(username,age);
-        if(studentDao.usernameExist(username)){
+        if(request.getParameter("update")!=null){
+            Long id = Long.parseLong(request.getParameter("update"));
+            student.setId(id);
+            if(!username.equals(studentDao.getStudentById(id).getUsername()) && studentDao.usernameExist(username) ){
+                request.setAttribute("student", student);
+                request.setAttribute("err1",true);
+            }else{
+                studentDao.update(student);
+                response.sendRedirect(request.getRequestURI());
+                return;
+            }
+        }else if(studentDao.usernameExist(username)){
             request.setAttribute("student", student);
             request.setAttribute("err1",true);
-        }else{
+        } else{
             studentDao.save(student);
         }
         this.doGet(request,response);

@@ -44,6 +44,19 @@
     </div>
     <div class="mycontent">
         <div class="mycon">
+            <form method="get" action="" class="container text-center">
+                <div class="row justify-content-md-center align-items-md-center">
+                    <div class="col-2">
+                        <label for="search" >Search</label>
+                    </div>
+                    <div class="col-4">
+                        <input class="form-control" type="text" value="" id="search" name="search">
+                    </div>
+                    <div class="col-2">
+                        <input class="btn btn-primary" type="submit" value="search">
+                    </div>
+                </div>
+            </form>
             <table class="table">
                 <thead class="table-dark">
                     <tr>
@@ -61,8 +74,8 @@
                     <td><%=student.getAge()%></td>
                     <td>
                         <div style="width: 100%;display: flex;justify-content: space-evenly;">
-                            <button class="btn btn-warning">Update</button>
-                            <button class="btn btn-danger">Delete</button>
+                            <a class="btn btn-warning" href="${pageContext.request.contextPath}/students?update=<%=student.getId()%>">Update</a>
+                            <a class="btn btn-danger" onclick="return confirm('Are you sure')" href="${pageContext.request.contextPath}/students?del=<%=student.getId()%>">Delete</a>
                         </div>
                     </td>
                 </tr>
@@ -72,6 +85,12 @@
         </div>
         <div class="mycon mycon2">
             <form action="" method="post">
+                <% if(request.getParameter("update")!=null){%>
+                <div class="mb-3">
+                    <label for="id" class="form-label">Id</label>
+                    <input type="text" name="id" id="id"  class="form-control" disabled value="<%=std.getId()%>">
+                </div>
+                <%}%>
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" required
@@ -90,8 +109,9 @@
                 <div class="mb-3">
                     <label for="age" class="form-label">Age</label>
                     <input required type="number" class="form-control" id="age"  name="age" value="<%=std.getAge()%>">
+
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary"><% if(request.getParameter("update")!=null){%> Update <% }else{%> Submit <%}%></button>
             </form>
         </div>
     </div>
