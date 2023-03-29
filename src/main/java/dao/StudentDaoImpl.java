@@ -11,7 +11,6 @@ import java.util.List;
 public class StudentDaoImpl implements StudentDao {
     @Override
     public Student save(Student student) {
-        List<Student> students=new ArrayList<Student>();
         Connection connection = SingletonConnection.getConnection();
         try{
             PreparedStatement ps= connection.prepareStatement
@@ -74,7 +73,7 @@ public class StudentDaoImpl implements StudentDao {
             ps.setString(1,   id.toString());
             ResultSet rs = ps.executeQuery();
             rs.next();
-            student = new Student(rs.getLong("ID"), rs.getString("USERNAME"), rs.getInt("AGE"));
+            student = new Student((long)rs.getInt("ID"), rs.getString("USERNAME"), rs.getInt("AGE"));
         } catch (Exception e) {
             e.printStackTrace();
         }

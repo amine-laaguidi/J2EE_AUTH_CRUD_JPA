@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Register</title>
     <base href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,16 +31,25 @@
 <div class="first">
     <form class="myform" action="" method="post">
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="exampleInputName" class="form-label">Full name</label>
+            <input type="text" name="fname" required class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label><br>
+            <input type="email" name="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" name="password" required class="form-control" id="exampleInputPassword1">
         </div>
-        <a href="${pageContext.request.contextPath}/register">Click here to register</a><br><br>
-        <input type="submit" value="Login" class="btn btn-primary " >
+        <div class="mb-3">
+            <label for="exampleInputPassword2" class="form-label">Password</label>
+            <input type="password" name="password2" required class="form-control" id="exampleInputPassword2">
+        </div>
+        <a href="${pageContext.request.contextPath}/login">Click here to login</a><br><br>
+        <input type="submit" value="Register" class="btn btn-primary ">
     </form>
 </div>
+
 </body>
 </html>

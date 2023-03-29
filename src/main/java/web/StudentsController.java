@@ -8,6 +8,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
 import java.util.List;
 
 @WebServlet(name = "StudentsController", value = "/students")
@@ -20,6 +22,17 @@ public class StudentsController extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("students");
+        HttpSession session = request.getSession();
+        if(session.getAttribute("user")==null) {
+            response.sendRedirect(request.getContextPath() + "/login");
+            return;
+        }else if(session.getAttribute("userSession")!=session.getId()){
+            session.removeAttribute("user");
+            session.removeAttribute("userSession");
+            response.sendRedirect(request.getContextPath() + "/login");
+            return;
+        }
         if(request.getParameter("del")!=null){
             Long id = Long.parseLong(request.getParameter("del"));
             studentDao.delete(id);

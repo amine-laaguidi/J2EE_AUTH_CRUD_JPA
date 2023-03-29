@@ -40,7 +40,8 @@
 </head>
 <body>
     <div class="mynavbar">
-        <a href="${pageContext.request.contextPath}/">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+        <h3></h3>
+        <a href="${pageContext.request.contextPath}/logout">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a>
     </div>
     <div class="mycontent">
         <div class="mycon">

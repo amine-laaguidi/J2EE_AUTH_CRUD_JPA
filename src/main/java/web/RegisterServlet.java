@@ -1,5 +1,7 @@
 package web;
 
+import dao.StudentDao;
+import dao.StudentDaoImpl;
 import dao.UserDao;
 import dao.UserDaoImpl;
 import service.model.User;
@@ -7,11 +9,10 @@ import service.model.User;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
-
 import java.io.IOException;
 
-@WebServlet(name = "LoginController", value = "/login")
-public class LoginController extends HttpServlet {
+@WebServlet("/register")
+public class RegisterServlet extends HttpServlet {
 
     private UserDao userDao;
 
@@ -30,26 +31,38 @@ public class LoginController extends HttpServlet {
             }
             if (request.getAttribute("user") != null)
                 request.setAttribute("user", new User());
-            request.getRequestDispatcher("views/login.jsp").forward(request, response);
+            request.getRequestDispatcher("views/register.jsp").forward(request, response);
         }
     }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String fname = request.getParameter("fname").trim();
         String email = request.getParameter("email").trim();
+        User user = new User();
+        user.setFname(fname);
+        user.setEmail(email);
         String password = request.getParameter("password");
-        User user1 = new User();
-        user1.setEmail(email);
-        user1.setPassword(password);
-        User user = userDao.auth(user1);
-        if(user==null) {
-            request.setAttribute("emailError", true);
-            doGet(request, response);
-        } else {
+        String password2 = request.getParameter("password2");
+        if(userDao.emailExist(email)){
+            request.setAttribute("emailError",true);
+            request.setAttribute("user",user);
+        }else if(!password2.equals(password)){
+            request.setAttribute("passError",true);
+            request.setAttribute("user",user);
+        }else{
+            try {
+                user.setPassword(password);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            userDao.save(user);
             user.setPassword("");
-            user.setId((long)0);
             request.getSession().setAttribute("user",user);
             request.getSession().setAttribute("userSession",request.getSession().getId());
             response.sendRedirect(request.getContextPath()+"/students");
+            return;
         }
+        doGet(request,response);
     }
 }
