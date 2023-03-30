@@ -125,8 +125,6 @@
             ele.blur();
             ele.focus();
         }
-
-
     }
 </script>
 </html>

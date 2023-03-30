@@ -21,14 +21,10 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        if(session.getAttribute("user")!=null || session.getAttribute("userSession")==session.getId())
+        if(session.getAttribute("user")!=null)
             response.sendRedirect(request.getContextPath()+"/students");
         else {
-            if(session.getAttribute("user")!=null){
-                session.removeAttribute("user");
-                session.removeAttribute("userSession");
-            }
-            if (request.getAttribute("user") != null)
+            if (request.getAttribute("user") == null)
                 request.setAttribute("user", new User());
             request.getRequestDispatcher("views/login.jsp").forward(request, response);
         }
@@ -48,7 +44,6 @@ public class LoginController extends HttpServlet {
             user.setPassword("");
             user.setId((long)0);
             request.getSession().setAttribute("user",user);
-            request.getSession().setAttribute("userSession",request.getSession().getId());
             response.sendRedirect(request.getContextPath()+"/students");
         }
     }

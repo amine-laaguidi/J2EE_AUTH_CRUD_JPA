@@ -11,8 +11,6 @@ public interface UserDao {
     boolean emailExist(String email);
     User getUserById(Long id);
     User auth(User user);
-    User getUserBySessionId(String sessionId);
-    void update(User user);
     void delete(Long id);
     String MD5(String val) throws Exception;
 }

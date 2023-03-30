@@ -7,17 +7,18 @@ public class User implements Serializable {
     private String fname;
     private String email;
     private String password;
-    private String session;
 
-    public User(Long id, String fname, String email, String password, String session) {
+    public User(Long id, String fname, String email, String password) {
         this.id = id;
         this.fname = fname;
         this.email = email;
         this.password = password;
-        this.session = session;
     }
 
     public User() {
+        this.fname = "";
+        this.email = "";
+        this.password = "";
     }
 
     public Long getId() {
@@ -50,13 +51,5 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getSession() {
-        return session;
-    }
-
-    public void setSession(String session) {
-        this.session = session;
     }
 }

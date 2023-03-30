@@ -91,40 +91,6 @@ public class UserDaoImpl implements UserDao {
         }
         return user1;
     }
-
-
-
-    @Override
-    public User getUserBySessionId(String sessionId) {
-        Connection connection = SingletonConnection.getConnection();
-        User user = null;
-        try {
-            PreparedStatement ps = connection.prepareStatement
-                    ("SELECT * FROM USERS WHERE SESSIONID = ?");
-            ps.setString(1,   sessionId);
-            ResultSet rs = ps.executeQuery();
-            rs.next();
-            user = new User();
-            user.setEmail(rs.getString("EMAIL"));
-            user.setFname(rs.getString("FNAME"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return user;
-    }
-
-    @Override
-    public void update(User user) {
-        Connection connection = SingletonConnection.getConnection();
-        try{
-            PreparedStatement ps = connection.prepareStatement
-                    ("UPDATE USERS SET FNAME="+'"'+user.getFname()+'"'+" , SESSIONID="+user.getSession()+" , EMAIL="+user.getEmail()+" WHERE ID="+user.getId());
-            ps.executeUpdate();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-
     @Override
     public void delete(Long id) {
 

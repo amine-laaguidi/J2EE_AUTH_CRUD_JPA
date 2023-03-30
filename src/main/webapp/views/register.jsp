@@ -1,4 +1,4 @@
-<%--
+<%@ page import="service.model.User" %><%--
   Created by IntelliJ IDEA.
   User: algart19
   Date: 20/3/23
@@ -12,6 +12,9 @@
 <c:set var="req" value="${pageContext.request}" />
 <c:set var="uri" value="${req.requestURI}" />
 <c:set var="url">${req.requestURL}</c:set>
+<%
+    User user = (User)request.getAttribute("user");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,11 +35,18 @@
     <form class="myform" action="" method="post">
         <div class="mb-3">
             <label for="exampleInputName" class="form-label">Full name</label>
-            <input type="text" name="fname" required class="form-control" id="exampleInputName" aria-describedby="emailHelp">
+            <input type="text" name="fname" required class="form-control " value="<%=user.getFname()%>" id="exampleInputName" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label><br>
-            <input type="email" name="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="email" name="email" required value="<%=user.getEmail()%>"  onfocus="remove(this)" class="form-control <%if(request.getAttribute("emailError")!=null){%>
+                     mycolor
+               <%}%>" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <%if(request.getAttribute("emailError")!=null){%>
+            <div id="usernamerr" class="text-danger" >
+                Email already used.
+            </div>
+            <%}%>
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -44,12 +54,28 @@
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword2" class="form-label">Password</label>
-            <input type="password" name="password2" required class="form-control" id="exampleInputPassword2">
+            <input type="password" name="password2"  onfocus="remove(this)" required class="form-control <%if(request.getAttribute("passError")!=null){%>
+                     mycolor
+               <%}%>" id="exampleInputPassword2">
+            <%if(request.getAttribute("passError")!=null){%>
+            <div id="usernamerr" class="text-danger" >
+                Invalid password confirmation
+            </div>
+            <%}%>
         </div>
         <a href="${pageContext.request.contextPath}/login">Click here to login</a><br><br>
         <input type="submit" value="Register" class="btn btn-primary ">
     </form>
 </div>
-
 </body>
+<script>
+    function remove(ele){
+        ele.classList.remove('mycolor');
+        if(ele.nextSibling!= null){
+            ele.nextSibling.remove();
+            ele.blur();
+            ele.focus();
+        }
+    }
+</script>
 </html>

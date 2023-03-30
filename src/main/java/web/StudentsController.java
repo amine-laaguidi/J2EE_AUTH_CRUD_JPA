@@ -27,11 +27,6 @@ public class StudentsController extends HttpServlet {
         if(session.getAttribute("user")==null) {
             response.sendRedirect(request.getContextPath() + "/login");
             return;
-        }else if(session.getAttribute("userSession")!=session.getId()){
-            session.removeAttribute("user");
-            session.removeAttribute("userSession");
-            response.sendRedirect(request.getContextPath() + "/login");
-            return;
         }
         if(request.getParameter("del")!=null){
             Long id = Long.parseLong(request.getParameter("del"));
