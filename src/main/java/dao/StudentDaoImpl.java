@@ -30,58 +30,35 @@ public class StudentDaoImpl implements StudentDao {
     }
     @Override
     public List<Student> studentsByUsername(String username) {
-        Query query = entityManager.createQuery("SELECT * FROM STUDENTS WHERE USERNAME LIKE ? '%" + username + "%'");
+        Query query = entityManager.createQuery("SELECT * FROM STUDENT WHERE USERNAME LIKE ? '%" + username + "%'");
         return query.getResultList();
     }
     @Override
     public boolean usernameExist(String username){
-        Query query = entityManager.createQuery("SELECT * FROM STUDENTS WHERE USERNAME LIKE ? '" + username + "%'");
+        Query query = entityManager.createQuery("SELECT * FROM STUDENT WHERE USERNAME LIKE ? '" + username + "%'");
         if(query.getResultList().get(0)!=null)
             return true;
         return false;
     }
     @Override
     public Student getStudentById(Long id) {
-        Connection connection = SingletonConnection.getConnection();
-        Student student = null;
-        try {
-            PreparedStatement ps = connection.prepareStatement
-                    ("SELECT * FROM STUDENTS WHERE ID = ?");
-            ps.setString(1,   id.toString());
-            ResultSet rs = ps.executeQuery();
-            rs.next();
-            student = new Student((long)rs.getInt("ID"), rs.getString("USERNAME"), rs.getInt("AGE"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return student;
+        return entityManager.find(Student.class, id);
     }
-
     @Override
-    public void update(Student student) {
-        Connection connection = SingletonConnection.getConnection();
-        try{
-            PreparedStatement ps = connection.prepareStatement
-                    ("UPDATE STUDENTS SET USERNAME="+'"'+student.getUsername()+'"'+" , AGE="+student.getAge()+" WHERE ID="+student.getId());
-            System.out.println("UPDATE STUDENTS SET USERNAME="+'"'+student.getUsername()+'"'+" , AGE="+student.getAge()+" WHERE ID="+student.getId()+"");
-            ps.executeUpdate();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
+    public Student update(Student student) {
+        Student studentToUpdate = getStudentById(student.getId());
+        entityManager.getTransaction().begin();
+        studentToUpdate.setUsername(student.getUsername());
+        studentToUpdate.setAge(student.getAge());
+        entityManager.getTransaction().commit();
+        return studentToUpdate;
     }
 
     @Override
     public void delete(Long id) {
-        Student student = getStudentById(id);
-        Connection connection = SingletonConnection.getConnection();
-        try{
-            PreparedStatement ps = connection.prepareStatement
-                    ("DELETE FROM STUDENTS WHERE ID = ?");
-            System.out.println("DELETE FROM STUDENTS WHERE ID = 1");
-            ps.setString(1,id.toString());
-            ps.executeUpdate();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
+        Student studentToDelete = getStudentById(id);
+        entityManager.getTransaction().begin();
+        entityManager.remove(studentToDelete);
+        entityManager.getTransaction().commit();
     }
 }

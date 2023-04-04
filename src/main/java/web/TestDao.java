@@ -3,6 +3,7 @@ package web;
 import java.util.List;
 
 import dao.StudentDaoImpl;
+import dao.StudentDao;
 import service.model.Student;
 public class TestDao {
     public static void main(String[] args) {
@@ -16,5 +17,13 @@ public class TestDao {
         for(Student p :prods){
             System.out.println(p.toString());
         }*/
+        Student student = new Student();
+        student.setUsername("hello");
+        student.setAge(12);
+
+        //REPOSITORIES
+        StudentDao studentDao = new StudentDaoImpl();
+
+        studentDao.save(student);
     }
 }

@@ -9,16 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dc05dba-dacd-4cf6-96b6-bb4ce0d7113c" name="Changes" comment="crud">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/persistence.xml" afterDir="false" />
+    <list default="true" id="3dc05dba-dacd-4cf6-96b6-bb4ce0d7113c" name="Changes" comment="crud curring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/SingletonConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/SingletonConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/StudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/StudentDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/StudentDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/StudentDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/model/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/StudentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/StudentsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/TestDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/TestDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,22 +87,27 @@
       <recent name="$PROJECT_DIR$/src/main/webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/META-INF" />
       <recent name="$PROJECT_DIR$/src/main/webapp/resources/css" />
       <recent name="$PROJECT_DIR$/src/main/webapp/resources" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/views" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9">
+  <component name="RunManager" selected="Application.TestDao">
     <configuration name="TestDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="web.TestDao" />
-      <module name="javaApp" />
+      <module name="AUTH_CRUD_JPA" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="web.*" />
           <option name="ENABLED" value="true" />
         </pattern>
+      </extension>
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -309,7 +314,7 @@
       <workItem from="1680050799689" duration="19442000" />
       <workItem from="1680140319969" duration="2046000" />
       <workItem from="1680324181778" duration="2687000" />
-      <workItem from="1680579814146" duration="3461000" />
+      <workItem from="1680579814146" duration="6946000" />
     </task>
     <task id="LOCAL-00001" summary="List of students&#10;Saving form">
       <created>1679371390583</created>
@@ -332,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680050990050</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="crud curring">
+      <created>1680587403734</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680587403734</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,6 +353,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="List of students&#10;Saving form" />
     <MESSAGE value="crud" />
-    <option name="LAST_COMMIT_MESSAGE" value="crud" />
+    <MESSAGE value="crud curring" />
+    <option name="LAST_COMMIT_MESSAGE" value="crud curring" />
   </component>
 </project>

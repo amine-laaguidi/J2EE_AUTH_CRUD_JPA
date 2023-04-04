@@ -9,6 +9,6 @@ public interface StudentDao {
     List<Student> studentsByUsername(String username);
     boolean usernameExist(String username);
     Student getStudentById(Long id);
-    void update(Student student);
+    Student update(Student student);
     void delete(Long id);
 }

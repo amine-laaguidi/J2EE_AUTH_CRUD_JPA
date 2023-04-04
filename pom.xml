@@ -89,6 +89,6 @@
 
   </dependencies>
   <build>
-    <finalName>javaApp</finalName>
+    <finalName>AUTH_CRUD_JPA</finalName>
   </build>
 </project>
