@@ -1,47 +1,28 @@
 package service.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.io.Serializable;
-
-public class Student implements Serializable {
+@Getter
+@Setter
+@NoArgsConstructor
+@Entity
+public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column
     private String username;
+    @Column
     private int age;
-    public Student(){}
-    public Student(Long id, String username, int age) {
-        this.id = id;
-        this.username = username;
-        this.age = age;
-    }
-    public Student(String username, int age) {
-        this.username = username;
-        this.age = age;
-    }
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     @Override
     public String toString() {
         return "ID: "+this.getId()+", USERNAME: "+this.getUsername()+", AGE: "+this.getAge();
     }
+
 }

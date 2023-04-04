@@ -48,7 +48,9 @@ public class StudentsController extends HttpServlet {
 
         String username = request.getParameter("username").trim();
         int age = Integer.parseInt(request.getParameter("age"));
-        Student student= new Student(username,age);
+        Student student= new Student();
+        student.setUsername(username);
+        student.setAge(age);
         if(request.getParameter("update")!=null){
             Long id = Long.parseLong(request.getParameter("update"));
             student.setId(id);

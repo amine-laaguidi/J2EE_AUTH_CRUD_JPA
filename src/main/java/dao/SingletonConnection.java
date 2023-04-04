@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class SingletonConnection {
+    /*
     private static Connection connection;
 
     static {
@@ -18,4 +19,6 @@ public class SingletonConnection {
     public static Connection getConnection(){
         return connection;
     }
+
+     */
 }

@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.example</groupId>
-  <artifactId>javaApp</artifactId>
+  <groupId>web</groupId>
+  <artifactId>AUTH_CRUD_JPA</artifactId>
   <packaging>war</packaging>
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
   <version>1.0-SNAPSHOT</version>
-  <name>javaApp Maven Webapp</name>
+  <name>AUTH_CRUD_JPA</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -18,7 +18,7 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
- <!--   <dependency>
+ <!--   <dependency>mvn install
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
       <version>5.0.0</version>
@@ -36,7 +36,11 @@
       <scope>provided</scope>
     </dependency>
     -->
-
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>5.6.15.Final</version>
+    </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>

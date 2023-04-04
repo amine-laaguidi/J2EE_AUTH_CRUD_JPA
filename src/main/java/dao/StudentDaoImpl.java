@@ -2,6 +2,10 @@ package dao;
 
 import service.model.Student;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,59 +13,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentDaoImpl implements StudentDao {
+
+    private EntityManager entityManager;
+    private EntityManagerFactory emf;
+
+    public StudentDaoImpl(){
+        this.emf = Persistence.createEntityManagerFactory("student_pu");
+        this.entityManager = this.emf.createEntityManager();
+    }
     @Override
     public Student save(Student student) {
-        Connection connection = SingletonConnection.getConnection();
-        try{
-            PreparedStatement ps= connection.prepareStatement
-                    ("INSERT INTO STUDENTS (USERNAME,AGE) VALUES (?,?)");
-            ps.setString(1,student.getUsername());
-            ps.setInt(2,student.getAge());
-            ps.executeUpdate();
-            PreparedStatement ps2=connection.prepareStatement
-                    ("SELECT MAX(ID) AS MAX_ID FROM PRODUITS");
-            ResultSet rs=ps2.executeQuery();
-            if(rs.next()){
-                student.setId(rs.getLong("MAX_ID")); // définir le id du produit inséré
-            }
-            ps.close();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
+        entityManager.getTransaction().begin();
+        entityManager.persist(student);
+        entityManager.getTransaction().commit();
         return student;
     }
     @Override
     public List<Student> studentsByUsername(String username) {
-        List<Student> students=new ArrayList<Student>();
-        Connection connection = SingletonConnection.getConnection();
-        try{
-            PreparedStatement ps = connection.prepareStatement
-                    ("SELECT * FROM STUDENTS WHERE USERNAME LIKE ?");
-            ps.setString(1,"%"+username+"%");
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                Student student=new Student(rs.getLong("ID"),rs.getString("USERNAME"),rs.getInt("AGE"));
-                students.add(student);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return students;
+        Query query = entityManager.createQuery("SELECT * FROM STUDENTS WHERE USERNAME LIKE ? '%" + username + "%'");
+        return query.getResultList();
     }
-
     @Override
     public boolean usernameExist(String username){
-        Connection connection = SingletonConnection.getConnection();
-        try{
-            PreparedStatement ps = connection.prepareStatement
-                    ("SELECT * FROM STUDENTS WHERE USERNAME LIKE ?");
-            ps.setString(1,username);
-            ResultSet rs = ps.executeQuery();
-            return rs.next();
-        }catch (Exception e){
-            e.printStackTrace();
+        Query query = entityManager.createQuery("SELECT * FROM STUDENTS WHERE USERNAME LIKE ? '" + username + "%'");
+        if(query.getResultList().get(0)!=null)
             return true;
-        }
+        return false;
     }
     @Override
     public Student getStudentById(Long id) {
