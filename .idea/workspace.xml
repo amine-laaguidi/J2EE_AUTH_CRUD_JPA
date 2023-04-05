@@ -9,16 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dc05dba-dacd-4cf6-96b6-bb4ce0d7113c" name="Changes" comment="crud curring">
+    <list default="true" id="3dc05dba-dacd-4cf6-96b6-bb4ce0d7113c" name="Changes" comment="testing jpa">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/AUTH_CRUD_JPA_ear_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/AUTH_CRUD_JPA_ejb_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/META-INF/application.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/StudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/StudentDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/StudentDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/StudentDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/StudentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/StudentsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/TestDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/TestDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,18 +59,21 @@
     </option>
   </component>
   <component name="ProjectId" id="2NFHYg4aio7u6ZgXyotxvJzO7fg" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/algart19/IdeaProjects/jpatutorial",
+    "last_opened_file_path": "/home/algart19/IdeaProjects/J2EE_AUTH_CRUD_JPA/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -87,14 +94,14 @@
       <recent name="$PROJECT_DIR$/src/main/webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/resources/META-INF" />
       <recent name="$PROJECT_DIR$/src/main/webapp/resources/css" />
       <recent name="$PROJECT_DIR$/src/main/webapp/resources" />
-      <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestDao">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9">
     <configuration name="TestDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="web.TestDao" />
       <module name="AUTH_CRUD_JPA" />
@@ -314,7 +321,7 @@
       <workItem from="1680050799689" duration="19442000" />
       <workItem from="1680140319969" duration="2046000" />
       <workItem from="1680324181778" duration="2687000" />
-      <workItem from="1680579814146" duration="6946000" />
+      <workItem from="1680579814146" duration="14497000" />
     </task>
     <task id="LOCAL-00001" summary="List of students&#10;Saving form">
       <created>1679371390583</created>
@@ -344,16 +351,25 @@
       <option name="project" value="LOCAL" />
       <updated>1680587403734</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="testing jpa">
+      <created>1680591536820</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680591536820</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="List of students&#10;Saving form" />
     <MESSAGE value="crud" />
     <MESSAGE value="crud curring" />
-    <option name="LAST_COMMIT_MESSAGE" value="crud curring" />
+    <MESSAGE value="testing jpa" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing jpa" />
   </component>
 </project>

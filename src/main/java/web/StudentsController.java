@@ -2,8 +2,11 @@ package web;
 
 import dao.StudentDao;
 import dao.StudentDaoImpl;
+import org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl;
+import org.hibernate.service.spi.InjectService;
 import service.model.Student;
 
+import javax.ejb.EJB;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -11,15 +14,19 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.util.List;
+import javax.inject.Inject;
 
 @WebServlet(name = "StudentsController", value = "/students")
 public class StudentsController extends HttpServlet {
 
+
     private StudentDao studentDao;
 
-    public void init() throws ServletException{
-        studentDao=new StudentDaoImpl();
+    @Override
+    public void init() throws ServletException {
+        studentDao = new StudentDaoImpl();
     }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("students");

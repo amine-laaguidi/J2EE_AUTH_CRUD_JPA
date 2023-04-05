@@ -6,6 +6,8 @@ import dao.UserDao;
 import dao.UserDaoImpl;
 import service.model.User;
 
+import javax.ejb.EJB;
+import javax.inject.Inject;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -16,9 +18,11 @@ public class RegisterServlet extends HttpServlet {
 
     private UserDao userDao;
 
-    public void init() throws ServletException{
-        userDao=new UserDaoImpl();
+    public void init() throws ServletException {
+        userDao = new UserDaoImpl();
     }
+
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
@@ -52,7 +56,11 @@ public class RegisterServlet extends HttpServlet {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-            userDao.save(user);
+            try {
+                userDao.save(user);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
             user.setPassword("");
             request.getSession().setAttribute("user",user);
             response.sendRedirect(request.getContextPath()+"/students");

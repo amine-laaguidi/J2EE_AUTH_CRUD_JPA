@@ -2,16 +2,16 @@ package dao;
 
 import service.model.Student;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.persistence.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import javax.ejb.Stateless;
+import javax.ejb.Local;
 
+@Stateless
 public class StudentDaoImpl implements StudentDao {
 
     private EntityManager entityManager;

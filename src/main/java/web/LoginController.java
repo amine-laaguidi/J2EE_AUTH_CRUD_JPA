@@ -4,6 +4,8 @@ import dao.UserDao;
 import dao.UserDaoImpl;
 import service.model.User;
 
+import javax.ejb.EJB;
+import javax.inject.Inject;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -15,8 +17,8 @@ public class LoginController extends HttpServlet {
 
     private UserDao userDao;
 
-    public void init() throws ServletException{
-        userDao=new UserDaoImpl();
+    public void init() throws ServletException {
+        userDao = new UserDaoImpl();
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,7 +38,12 @@ public class LoginController extends HttpServlet {
         User user1 = new User();
         user1.setEmail(email);
         user1.setPassword(password);
-        User user = userDao.auth(user1);
+        User user = null;
+        try {
+            user = userDao.auth(user1);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         if(user==null) {
             request.setAttribute("emailError", true);
             doGet(request, response);

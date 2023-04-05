@@ -5,7 +5,11 @@ import java.util.List;
 import dao.StudentDaoImpl;
 import dao.StudentDao;
 import service.model.Student;
+
+import javax.ejb.EJB;
+
 public class TestDao {
+
     public static void main(String[] args) {
         /*StudentDaoImpl dao=new StudentDaoImpl();
         Student s1=dao.save(new Student("usernumber1",20));
@@ -20,10 +24,7 @@ public class TestDao {
         Student student = new Student();
         student.setUsername("hello");
         student.setAge(12);
-
-        //REPOSITORIES
         StudentDao studentDao = new StudentDaoImpl();
-
         studentDao.save(student);
     }
 }

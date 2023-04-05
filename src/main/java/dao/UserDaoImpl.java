@@ -3,10 +3,9 @@ package dao;
 import service.model.Student;
 import service.model.User;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.ejb.Local;
+import javax.ejb.Stateless;
+import javax.persistence.*;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.sql.Connection;
@@ -14,7 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
+@Stateless
 public class UserDaoImpl implements UserDao {
 
     private EntityManager entityManager;
@@ -30,16 +29,16 @@ public class UserDaoImpl implements UserDao {
         return new BigInteger(1,m.digest()).toString(16);
     }
     @Override
-    public User save(User user) {
+    public User save(User user) throws Exception {
         entityManager.getTransaction().begin();
+        user.setPassword(MD5(user.getPassword()));
         entityManager.persist(user);
         entityManager.getTransaction().commit();
         return user;
     }
 
     @Override
-    public List<User> studentsByFullname(String fullname) {
-
+    public List<User> usersByFullname(String fullname) {
         return null;
     }
 
@@ -53,12 +52,13 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User getUserById(Long id) {
-        return null;
+        return entityManager.find(User.class, id);
     }
 
     @Override
-    public User auth(User user) {
-        return null;
+    public User auth(User user) throws Exception {
+        Query query = entityManager.createQuery("SELECT * FROM USER WHERE EMAIL LIKE ? '" + user.getEmail() + "' AND PASSWORD LIKE ? '"+MD5(user.getPassword())+"'");
+        return (User) query.getSingleResult();
     }
     @Override
     public void delete(Long id) {
