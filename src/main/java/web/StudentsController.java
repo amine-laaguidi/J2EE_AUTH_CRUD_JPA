@@ -19,12 +19,12 @@ import javax.inject.Inject;
 @WebServlet(name = "StudentsController", value = "/students")
 public class StudentsController extends HttpServlet {
 
-
+    @Inject
     private StudentDao studentDao;
 
     @Override
     public void init() throws ServletException {
-        studentDao = new StudentDaoImpl();
+
     }
 
     @Override

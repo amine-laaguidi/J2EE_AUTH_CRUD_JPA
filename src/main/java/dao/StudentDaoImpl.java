@@ -12,14 +12,14 @@ import javax.ejb.Stateless;
 import javax.ejb.Local;
 
 @Stateless
+@Local(StudentDao.class)
 public class StudentDaoImpl implements StudentDao {
 
-    private EntityManager entityManager;
-    private EntityManagerFactory emf;
+    private final EntityManager entityManager;
 
     public StudentDaoImpl(){
-        this.emf = Persistence.createEntityManagerFactory("student_pu");
-        this.entityManager = this.emf.createEntityManager();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
+        this.entityManager = emf.createEntityManager();
     }
     @Override
     public Student save(Student student) {
@@ -30,12 +30,17 @@ public class StudentDaoImpl implements StudentDao {
     }
     @Override
     public List<Student> studentsByUsername(String username) {
-        Query query = entityManager.createQuery("SELECT * FROM STUDENT WHERE USERNAME LIKE ? '%" + username + "%'");
-        return query.getResultList();
+        Query query = entityManager.createQuery("SELECT s FROM Student s WHERE s.username LIKE  '%" + username + "%'");
+        try{
+            return query.getResultList();
+        }catch(NoResultException e){
+            System.out.println("NoResultException");
+            return null;
+        }
     }
     @Override
     public boolean usernameExist(String username){
-        Query query = entityManager.createQuery("SELECT * FROM STUDENT WHERE USERNAME LIKE ? '" + username + "%'");
+        Query query = entityManager.createQuery("SELECT s FROM Student s WHERE s.username LIKE  '%" + username + "%'");
         if(query.getResultList().get(0)!=null)
             return true;
         return false;

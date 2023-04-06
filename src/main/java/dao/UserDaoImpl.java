@@ -4,6 +4,7 @@ import service.model.Student;
 import service.model.User;
 
 import javax.ejb.Local;
+import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.*;
 import java.math.BigInteger;
@@ -14,13 +15,14 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 @Stateless
+@Local(UserDao.class)
 public class UserDaoImpl implements UserDao {
 
-    private EntityManager entityManager;
-    private EntityManagerFactory emf;
+    private final EntityManager entityManager;
+
     public UserDaoImpl(){
-        this.emf = Persistence.createEntityManagerFactory("student_pu");
-        this.entityManager = this.emf.createEntityManager();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
+       this.entityManager = emf.createEntityManager();
     }
 
     public String MD5(String s) throws Exception {
@@ -44,10 +46,13 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean emailExist(String email) {
-        Query query = entityManager.createQuery("SELECT * FROM USER WHERE EMAIL LIKE ? '" + email + "'");
-        if( query.getSingleResult() !=null)
-            return true;
-        return false;
+        Query query = entityManager.createQuery("SELECT u FROM User u WHERE u.email LIKE ?1 ",User.class);
+        query.setParameter(1,email);
+        try{
+            return query.getSingleResult() !=null;
+        }catch(NoResultException e){
+            return false;
+        }
     }
 
     @Override
@@ -57,7 +62,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User auth(User user) throws Exception {
-        Query query = entityManager.createQuery("SELECT * FROM USER WHERE EMAIL LIKE ? '" + user.getEmail() + "' AND PASSWORD LIKE ? '"+MD5(user.getPassword())+"'");
+        Query query = entityManager.createQuery("SELECT u FROM User u WHERE u.email LIKE  '" + user.getEmail() + "' AND u.password LIKE  '"+MD5(user.getPassword())+"'");
         return (User) query.getSingleResult();
     }
     @Override

@@ -9,6 +9,7 @@ import java.io.Serializable;
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "USER")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

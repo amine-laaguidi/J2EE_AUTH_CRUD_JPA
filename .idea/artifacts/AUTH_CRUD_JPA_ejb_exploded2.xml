@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ejb" name="AUTH_CRUD_JPA:ejb exploded2">
+    <output-path>$PROJECT_DIR$/out/artifacts/AUTH_CRUD_JPA_ejb_exploded2</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="AUTH_CRUD_JPA/ejb/EJB" />
+      <element id="javaee-facet-classes" facet="AUTH_CRUD_JPA/ejb/EJB" />
+    </root>
+  </artifact>
+</component>

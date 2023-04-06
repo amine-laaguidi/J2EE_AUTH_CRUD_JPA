@@ -15,11 +15,10 @@ import java.io.IOException;
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
-
+    @Inject
     private UserDao userDao;
 
     public void init() throws ServletException {
-        userDao = new UserDaoImpl();
     }
 
 
@@ -51,11 +50,7 @@ public class RegisterServlet extends HttpServlet {
             request.setAttribute("passError",true);
             request.setAttribute("user",user);
         }else{
-            try {
                 user.setPassword(password);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
             try {
                 userDao.save(user);
             } catch (Exception e) {

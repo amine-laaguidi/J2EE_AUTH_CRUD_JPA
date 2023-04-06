@@ -14,11 +14,11 @@ import java.io.IOException;
 
 @WebServlet(name = "LoginController", value = "/login")
 public class LoginController extends HttpServlet {
-
+    @Inject
     private UserDao userDao;
 
     public void init() throws ServletException {
-        userDao = new UserDaoImpl();
+
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

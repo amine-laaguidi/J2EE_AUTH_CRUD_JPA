@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="AUTH_CRUD_JPA:ear exploded2">
+    <output-path>$PROJECT_DIR$/out/artifacts/AUTH_CRUD_JPA_ear_exploded2</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="AUTH_CRUD_JPA/javaeeApplication/javaEEApplication" />
+    </root>
+  </artifact>
+</component>

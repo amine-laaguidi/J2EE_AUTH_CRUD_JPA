@@ -2,24 +2,31 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="javaApp:war" />
+      <artifact name="AUTH_CRUD_JPA:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dc05dba-dacd-4cf6-96b6-bb4ce0d7113c" name="Changes" comment="testing jpa">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/AUTH_CRUD_JPA_ear_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/AUTH_CRUD_JPA_ejb_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/META-INF/application.xml" afterDir="false" />
+    <list default="true" id="3dc05dba-dacd-4cf6-96b6-bb4ce0d7113c" name="Changes" comment="testing jpa v2">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/AUTH_CRUD_JPA_ear_exploded2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/AUTH_CRUD_JPA_ejb_exploded2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.annotation.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.jms.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.resource.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/META-INF/application.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/StudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/StudentDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/StudentDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/StudentDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/MyFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/MyFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/RegisterServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/StudentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/StudentsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/TestDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/TestDao.java" afterDir="false" />
@@ -35,6 +42,7 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="Jsp File" />
+        <option value="Tag Library Descriptor" />
       </list>
     </option>
   </component>
@@ -52,6 +60,11 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="workspaceImportEnabled" value="true" />
@@ -79,6 +92,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
@@ -94,14 +110,14 @@
       <recent name="$PROJECT_DIR$/src/main/webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/resources/META-INF" />
       <recent name="$PROJECT_DIR$/src/main/webapp/resources/css" />
       <recent name="$PROJECT_DIR$/src/main/webapp/resources" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9">
+  <component name="RunManager" selected="TomEE Server.TomEE 9.0.71">
     <configuration name="TestDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="web.TestDao" />
       <module name="AUTH_CRUD_JPA" />
@@ -120,24 +136,132 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 10.1.7" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.7" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="TomEE 9.0.71" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="TomEE 9.0.71" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="javaApp:war">
+        <artifact name="AUTH_CRUD_JPA:war">
           <settings>
-            <option name="CONTEXT_PATH" value="/javaApp_war" />
+            <option name="CONTEXT_PATH" value="/AUTH_CRUD_JPA" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="383b56c2-dbfd-4356-8827-173cb77a97ac" />
-        <option name="HTTP_PORT" value="8080" />
+        <option name="BASE_DIRECTORY_NAME" value="b8ee9b8d-1f72-4263-bc48-51d1ee63837a" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="40263" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="AUTH_CRUD_JPA:war" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="TomeeConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="AUTH_CRUD_JPA:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/AUTH_CRUD_JPA_war" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="383b56c2-dbfd-4356-8827-173cb77a97ac" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="44391" />
       </RunnerSettings>
@@ -204,101 +328,26 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="javaApp:war" />
+          <artifact name="AUTH_CRUD_JPA:war" />
         </option>
       </method>
     </configuration>
-    <configuration name="Tomcat 9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="javaApp:war">
-          <settings>
-            <option name="CONTEXT_PATH" value="/javaApp_war" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="eb926211-2778-46c5-a35c-d84f8b20908e" />
-      </server-settings>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="42469" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="javaApp:war" />
-        </option>
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.TestDao" />
       <item itemvalue="Tomcat Server.Tomcat 9" />
-      <item itemvalue="Tomcat Server.Tomcat 10.1.7" />
+      <item itemvalue="TomEE Server.TomEE 9.0.71" />
     </list>
     <recent_temporary>
       <list>
@@ -321,7 +370,7 @@
       <workItem from="1680050799689" duration="19442000" />
       <workItem from="1680140319969" duration="2046000" />
       <workItem from="1680324181778" duration="2687000" />
-      <workItem from="1680579814146" duration="14497000" />
+      <workItem from="1680579814146" duration="26259000" />
     </task>
     <task id="LOCAL-00001" summary="List of students&#10;Saving form">
       <created>1679371390583</created>
@@ -358,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680591536820</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="testing jpa v2">
+      <created>1680731673966</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680731673966</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,6 +426,7 @@
     <MESSAGE value="crud" />
     <MESSAGE value="crud curring" />
     <MESSAGE value="testing jpa" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing jpa" />
+    <MESSAGE value="testing jpa v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing jpa v2" />
   </component>
 </project>
